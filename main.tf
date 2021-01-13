@@ -11,6 +11,6 @@ resource "aws_s3_bucket" "seb_bucket" {
 }
 
 resource "aws_s3_bucket_object" "seb_bucket_object" {
-  bucket = aws_s3_bucket.seb_bucket.name
+  bucket = aws_s3_bucket.seb_bucket.id
   key        = "seb_test"
 }
