@@ -12,6 +12,6 @@ resource "aws_s3_bucket" "seb_bucket" {
 
 resource "aws_s3_bucket_object" "seb_bucket_object" {
   count = var.condition ? 1 : 0
-  bucket = aws_s3_bucket.seb_bucket.id
+  bucket = aws_s3_bucket.seb_bucket[1].id
   key        = "seb_test"
 }
