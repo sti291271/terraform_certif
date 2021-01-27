@@ -1,5 +1,6 @@
 # Test code
 resource "aws_s3_bucket" "seb_bucket" {
+  count = var.seb_condition == "true" ? 1 : 0
   bucket = "my-tf-certif-bucket"
   acl    = "private"
 
