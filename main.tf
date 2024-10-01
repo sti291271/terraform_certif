@@ -15,3 +15,9 @@ resource "aws_s3_bucket_object" "seb_bucket_object" {
   bucket = aws_s3_bucket.seb_bucket[0].id
   key        = "seb_test"
 }
+
+resource "aws_s3_bucket_object" "seb_bucket_object_2" {
+  count = var.seb_condition == "true" ? 1 : 0
+  bucket = aws_s3_bucket.seb_bucket[0].id
+  key        = "seb_test2"
+}
